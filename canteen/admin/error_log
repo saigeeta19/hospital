@@ -1,0 +1,8 @@
+[15-Feb-2013 10:48:32 America/Chicago] PHP Warning:  file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Filename cannot be empty in /home/argie/public_html/genesis/admin/editpicexec.php on line 7
+[15-Feb-2013 10:48:32 America/Chicago] PHP Warning:  getimagesize() [<a href='function.getimagesize'>function.getimagesize</a>]: Filename cannot be empty in /home/argie/public_html/genesis/admin/editpicexec.php on line 9
+[15-Feb-2013 10:49:01 America/Chicago] PHP Warning:  file_get_contents() [<a href='function.file-get-contents'>function.file-get-contents</a>]: Filename cannot be empty in /home/argie/public_html/genesis/admin/editpicexec.php on line 7
+[15-Feb-2013 10:49:01 America/Chicago] PHP Warning:  getimagesize() [<a href='function.getimagesize'>function.getimagesize</a>]: Filename cannot be empty in /home/argie/public_html/genesis/admin/editpicexec.php on line 9
+[15-Feb-2013 10:54:09 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/argie/public_html/genesis/admin/vieworders.php on line 6
+[15-Feb-2013 10:54:09 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/argie/public_html/genesis/admin/vieworders.php on line 23
+[15-Feb-2013 10:54:09 America/Chicago] PHP Warning:  mysql_fetch_array() expects parameter 1 to be resource, boolean given in /home/argie/public_html/genesis/admin/vieworders.php on line 34
+[15-Feb-2013 11:37:48 America/Chicago] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/argie/public_html/genesis/admin/viewreport.php on line 28

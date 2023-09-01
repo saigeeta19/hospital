@@ -1,0 +1,35 @@
+body{
+	background-color: #282828;
+    color: #555555;
+    font-size: 13px;
+	font-family:arial;
+}
+#wrapper{
+	margin:0 auto;
+	width:900px;
+}
+.clearfix{
+	clear:both;
+}
+#note{
+	background-color: #fff;
+	padding:10px;
+	margin-bottom:10px;
+}
+#content{
+}
+#productlist{
+	background-color: #fff;
+	padding:10px;
+	float:left;
+	width:600px;
+}
+#orderlist{
+	background-color: #fff;
+	padding:10px;
+	float:right;
+	width:250px;
+}
+.pngfix{
+	padding:5px;
+}
