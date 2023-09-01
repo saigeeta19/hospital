@@ -1,0 +1,230 @@
+
+<?php
+date_default_timezone_set("Asia/Kolkata");
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Reigate Hospice</title>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+<link rel="stylesheet" href="css/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css" />
+<link rel="stylesheet" href="css/flexselect.css" type="text/css" />
+<link rel="stylesheet" href="css/select2.css" type="text/css" />
+<link rel="stylesheet" href="css/style1.css" type="text/css" />
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.8.0.min.js" type="text/javascript"></script>
+<script src="js/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="js/jquery.flexselect.js" type="text/javascript"></script>
+<script src="js/jquery-ui.js" type="text/javascript"></script>
+<script src="js/select2.js" type="text/javascript"></script>
+<script src="js/timepicker.js" type="text/javascript"></script>
+<script src="js/footable.paginate.js"  type="text/javascript"></script>
+<script src="js/jquery-barcode.js" type="text/javascript"></script>
+<script src="js/jquery-barcode.min.js" type="text/javascript"></script>
+
+ <script type="text/javascript">
+$(window).load(function() {
+$("#pageloaddiv").fadeOut(2000);
+});
+
+$(function() {
+    $('input').keyup(function() {
+        this.value = this.value.toUpperCase();
+    });
+    $('textarea').keyup(function() {
+        this.value = this.value.toUpperCase();
+    });
+});
+</script>
+
+<script type="text/javascript">
+
+function Pager(tableName, itemsPerPage) {
+
+this.tableName = tableName;
+
+this.itemsPerPage = itemsPerPage;
+
+this.currentPage = 1;
+
+this.pages = 0;
+
+this.inited = false;
+
+this.showRecords = function(from, to) {
+
+var rows = document.getElementById(tableName).rows;
+
+// i starts from 1 to skip table header row
+
+for (var i = 1; i < rows.length; i++) {
+
+if (i < from || i > to)
+
+rows[i].style.display = 'none';
+
+else
+
+rows[i].style.display = '';
+
+}
+
+}
+
+this.showPage = function(pageNumber) {
+
+if (! this.inited) {
+
+alert("not inited");
+
+return;
+
+}
+
+var oldPageAnchor = document.getElementById('pg'+this.currentPage);
+
+oldPageAnchor.className = 'pg-normal';
+
+this.currentPage = pageNumber;
+
+var newPageAnchor = document.getElementById('pg'+this.currentPage);
+
+newPageAnchor.className = 'pg-selected';
+
+var from = (pageNumber - 1) * itemsPerPage + 1;
+
+var to = from + itemsPerPage - 1;
+
+this.showRecords(from, to);
+
+}
+
+this.prev = function() {
+
+if (this.currentPage > 1)
+
+this.showPage(this.currentPage - 1);
+
+}
+
+this.next = function() {
+
+if (this.currentPage < this.pages) {
+
+this.showPage(this.currentPage + 1);
+
+}
+
+}
+
+this.init = function() {
+
+var rows = document.getElementById(tableName).rows;
+
+var records = (rows.length - 1);
+
+this.pages = Math.ceil(records / itemsPerPage);
+
+this.inited = true;
+
+}
+
+this.showPageNav = function(pagerName, positionId) {
+
+if (! this.inited) {
+
+alert("not inited");
+
+return;
+
+}
+
+var element = document.getElementById(positionId);
+
+var pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-normal"> Prev </span> ';
+
+for (var page = 1; page <= this.pages; page++)
+
+pagerHtml += '<span id="pg' + page + '" class="pg-normal" onclick="' + pagerName + '.showPage(' + page + ');">' + page + '</span> ';
+
+pagerHtml += '<span onclick="'+pagerName+'.next();" class="pg-normal"> Next</span>';
+
+element.innerHTML = pagerHtml;
+
+}
+
+}
+
+</script>
+<script type="text/javascript">
+
+$(document).ready(function()
+             {
+                 $("#sidebar tr").hide();
+                 $("#sidebar tr.RowToClick").show();
+                 
+                 $('.RowToClick').click(function ()
+                 {
+                     $(this).nextAll('tr').each( function()
+                     {
+                         if ($(this).is('.RowToClick'))
+                        {
+                           return false;
+                        }
+                        $(this).toggle(100);
+                     });
+                 });
+             });
+</script>
+
+
+
+<style type="text/css">
+#pageloaddiv {
+ position: fixed; 
+left: 0px;
+top: 0px;
+width: 100%;
+height: 100%;
+z-index: 1000;
+background: url('images/pageloader.gif') no-repeat center center;
+}
+</style>
+</head>
+
+<body>
+
+<div id="pageloaddiv"></div>
+	<div class="header">Reigate Hospice</div>
+	<?php
+	/* $cd=date("d-m-Y");
+	if($cd=="10-11-2022" OR $cd=="11-11-2022" OR $cd=="12-11-2022" OR $cd=="13-11-2022"  OR $cd=="14-11-2022"  OR $cd=="15-11-2022" OR $cd=="16-11-2022" OR $cd=="17-11-2022" )
+	{ */
+	?>
+	<!-- <div align="center" id="footer" style="color:yellow;font-size:24px; padding-top:30px;margin-left:20%;margin-right:20%;"> <marquee direction="left">Your application is expired. New license key is required. Please contact your service provider.</marquee>
+	</div> -->
+	<!--<div align="center" id="footer" style="color:yellow;font-size:24px; padding-top:30px;margin-left:20%;margin-right:20%;"> <marquee direction="left">Your application renewal has been temporarily increased to 25th December, 2018. Please contact your service provider.</marquee>
+	</div>-->
+	<?php
+	// }
+	?>
+	<?php
+	/*
+	if($cd=="31-10-2022" OR $cd=="01-11-2022" OR $cd=="02-11-2022" OR $cd=="03-11-2022"  OR $cd=="04-11-2022"  OR $cd=="05-11-2022" OR $cd=="06-11-2022"  OR $cd=="07-11-2022" OR $cd=="08-11-2022" OR $cd=="09-11-2022")
+	{ */
+	?>
+	<div align="center" id="footer" style="color:yellow;font-size:24px; padding-top:30px;margin-left:20%;margin-right:20%;"> <marquee direction="left">Your application is expiring on 10th November, 2022. New license key is required. Please contact your service provider.</marquee>
+	</div>
+	
+	<?php
+	}
+	
+	?>
+	
+	<a href="logout.php" class="tsc_3d_button orange" id="logout" style="float: right;">  Logout </a> 
+	<div id="page">
+		
+	
