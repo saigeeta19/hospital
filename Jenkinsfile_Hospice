@@ -21,7 +21,7 @@ pipeline {
             branches: [[name: 'master']], // Change 'master' to your desired branch
             userRemoteConfigs: [[
                 url: 'https://github.com/saigeeta19/hospital.git', // Replace with your Git repository URL
-                credentialsId: 'saigeeta19' // Optionally, provide Jenkins credentials for authentication
+                credentialsId: 'hospital' // Optionally, provide Jenkins credentials for authentication
             ]]
         ])
     }
