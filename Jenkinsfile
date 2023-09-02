@@ -21,12 +21,5 @@ pipeline {
         }
     }
 
-    post {
-        success {
-           ALL Okay
-        }
-        failure {
-            Check one more time
-        }
-    }
+  
 }
