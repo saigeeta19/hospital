@@ -4,7 +4,7 @@ date_default_timezone_set("Asia/Kolkata");
 
 
 
-$con=mysqli_connect("localhost","root","","mahadev");
+$con=mysqli_connect("localhost","root","","mahadev2023");
 
 $con2=mysqli_connect("localhost","root","","canteen");
 

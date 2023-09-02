@@ -1,5 +1,6 @@
 <?php session_start(); ?>
 <?php include 'session.php'; ?> 
+<?php echo "hi"; ?>
 <?php include 'connection.php'; ?>
 <?php
 $logger=$_SESSION['logger'];
@@ -101,26 +102,26 @@ echo $pagLink . "</div><br/>";
               <th>Registered By</th>
             </tr>
             <?php
-            while($row=mysql_fetch_array($query))
+            while($row=mysqli_fetch_array($query))
             {
-                $date=$row[date];
+                $date=$row['date'];
                 $date = date(" d-M-Y h:i a", strtotime($date));
-                $mode=$row[mode_payment];
+                $mode=$row['mode_payment'];
                 if($mode=="Credit")
                 {
                     $mode=$mode." / ".$row['corporate'];
                 }
             echo "
             <tr>
-            <td align='center'>$row[uid]</td>
-            <td align='center'>$date</td>
-            <td align='center'>$row[ntitle].$row[name]</td>
-            <td align='center'>$row[gender]</td>
-           <td align='center'>$row[co_name]</td>
-           <td align='center'>$row[address]</td>
-            <td align='center'>$row[phone_number]</td>
+            <td align='center'>".$row['uid']."</td>
+            <td align='center'>".$date."</td>
+            <td align='center'>".$row['ntitle'].$row['name']."</td>
+            <td align='center'>".$row['gender']."</td>
+           <td align='center'>".$row['co_name']."</td>
+           <td align='center'>".$row['address']."</td>
+            <td align='center'>".$row['phone_number']."</td>
            
-            <td align='center'>$row[entry_person]</td>
+            <td align='center'>".$row['entry_person']."</td>
             </tr>
             ";
             
