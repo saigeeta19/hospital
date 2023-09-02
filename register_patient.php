@@ -201,6 +201,7 @@ else if($gender=="FEMALE")
         <td colspan='5'>$doctor</td>
        
        </tr>
+	   
        ";
         $t=$t."</table><br/>";
         $t=$t."</html>";
