@@ -24,7 +24,7 @@ if($_POST['submit'])
 $username=$_REQUEST['username'];
 $password=$_REQUEST['password'];
 $name=$_REQUEST['name'];
-$sql=mysqli_query($con,"SELECT * FROM users WHERE username=''".$username."'");
+$sql=mysqli_query($con,"SELECT * FROM users WHERE username='".$username."'");
 if(mysqli_num_rows($sql)>0)
 {
      echo "<script>alert('User already exists'); </script>";
