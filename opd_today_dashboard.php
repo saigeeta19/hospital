@@ -117,14 +117,14 @@ function searchTable(inputVal)
             echo "
             <tr>
             <td align='center'>$inc</td>
-            <td align='center'>$row[bill_number]$h</td>
-            <td align='center'>$row[patient_id]</td>
-            <td align='center'>$patient_name</a></td>
-            <td align='center'>$row[age]</td>
-            <td align='center'>$row[doctor]</td>
-            <td align='center'>Rs. $amount</td>
-            <td align='center'>$row[entry_person]</td>
-           <td align='center'><a target='_blank' href='print_cons.php?bill=".$row[bill_number]."'><input type='button' name='print' id='print' value='Print'/></a>
+            <td align='center'>".$row['bill_number'].$h."</td>
+            <td align='center'>".$row['patient_id']."</td>
+            <td align='center'>".$patient_name."</a></td>
+            <td align='center'>".$row['age']."</td>
+            <td align='center'>".$row['doctor']."</td>
+            <td align='center'>Rs. ".$amount."</td>
+            <td align='center'>".$row['entry_person']."</td>
+           <td align='center'><a target='_blank' href='print_cons.php?bill=".$row['bill_number']."'><input type='button' name='print' id='print' value='Print'/></a>
              </td>
              
             </tr>

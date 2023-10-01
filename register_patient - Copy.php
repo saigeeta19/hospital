@@ -457,14 +457,14 @@ $( "#pdetails" ).click(function(){
 			    <td>Referred By (Phone)</td>
                 <td><input type="text" name="referred_num" id="referred_num"/></td>
        		</tr>
-       		<tr>
+       		<!--<tr>
 			    <td>Select PRO</td>
 			    <td><select name="pro_name">
 			    	<option value="">Select</option>
 			    </select></td>
 			    <td></td>
                 <td></td>
-       		</tr>
+       		</tr> -->
        <tr>
 			    <td>Select Mode</td>
                 <td><input type="radio" id="paid" name="mode" value="paid" checked="checked"/>Paid<input type="radio" name="mode" id="unpaid" value="unpaid"/>No Paid</td>

@@ -47,7 +47,7 @@ if($right=="no")
         
         
         
-       $date1=date("d-m-Y");
+        $date1=date("d-m-Y");
  $sql63=mysqli_query($con,"SELECT * FROM doctor_list WHERE doctor_name='".$doctor."'");
 	   $sql64=mysqli_fetch_array($sql63);
        $doctor_fees=$sql64['doctor_fees'];
@@ -55,12 +55,13 @@ if($right=="no")
        $s="no";
        // For Bill number
        $bd=date("Y/m/");
+	   
        $sql56=mysqli_query($con,"SELECT * FROM billnumbers WHERE bill_format='".$bd."'");
        if(mysqli_num_rows($sql56)>0)
        {
-           $sql57=mysqli_query($con,"SELECT max(bill_number) FROM billnumbers WHERE bill_format='".$bd."'",$con);
-           $sql58=mysqli_fetch_array($sql57);
-           $mbill=$sql58['max(bill_number)'];
+		   $sql57=mysqli_query($con,"SELECT max(bill_number) FROM billnumbers WHERE bill_format='".$bd."'");
+		   $sql58=mysqli_fetch_array($sql57);
+		   $mbill=$sql58['max(bill_number)'];
            $bn=$mbill+1;
            $bill_number=$bd.$bn;
        }
@@ -68,7 +69,9 @@ if($right=="no")
            $bn=1;
            $bill_number=$bd.$bn;
        }
+	  
        //Bill number ends here
+	   
        if($mode=="paid")
       {
           
@@ -122,7 +125,7 @@ if($right=="no")
     }
        
        
-      
+     
        
        
 	  if($uid=="")
@@ -201,7 +204,6 @@ else if($gender=="FEMALE")
         <td colspan='5'>$doctor</td>
        
        </tr>
-	   
        ";
         $t=$t."</table><br/>";
         $t=$t."</html>";
@@ -496,10 +498,10 @@ $( "#pmode" ).change(function(){
 			    <td><select name="doctor" id="doctor" required="required">
 			        <option value="">Select</option>
 			        <?php
-			        $query=mysql_query("SELECT * FROM doctor_list",$con);
-                    while($row=mysql_fetch_array($query))
+			        $query=mysqli_query($con,"SELECT * FROM doctor_list");
+                    while($row=mysqli_fetch_array($query))
                     {
-                        echo "<option value='".$row[doctor_name]."'>$row[doctor_name]</option>";
+                        echo "<option value='".$row['doctor_name']."'>".$row['doctor_name']."</option>";
                     }
 			        ?>
 			        
