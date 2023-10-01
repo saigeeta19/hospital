@@ -4,6 +4,7 @@
  $patient_id=$_POST["patient_id"];
  $query=mysqli_query($con,"SELECT * FROM patients WHERE uid='".$patient_id."'");
  $row=mysqli_fetch_array($query);
+
  
  ?>
 <table id="table1"  name="t1" border="2" width="100%" >
@@ -13,7 +14,7 @@
             </tr>
             <tr>
                 <td>Title</td>
-                <td><input type="radio" name="ntitle" id="Miss" value="Miss" <?php if($row['ntitle']=="Miss") { echo checked; }?> /> Miss <input type="radio" name="ntitle" id="Mr" value="Mr" <?php if($row['ntitle']=="Mr") { echo checked; }?> /> Mr <input type="radio" name="ntitle" id="Mrs" value="Mrs"  <?php if($row['ntitle']=="Mrs") { echo checked; }?>/> Mrs </td>
+                <td><input type="radio" name="ntitle" id="Miss" value="Miss" <?php if($row['ntitle']=="Miss") { echo "checked"; }?> /> Miss <input type="radio" name="ntitle" id="Mr" value="Mr" <?php if($row['ntitle']=="Mr") { echo "checked"; }?> /> Mr <input type="radio" name="ntitle" id="Mrs" value="Mrs"  <?php if($row['ntitle']=="Mrs") { echo checked; }?>/> Mrs </td>
                 <td>Name</td>
                 <td><input type="text" name="fname" id="fname" value="<?php echo $row['name']; ?>" /></td>
                 
@@ -22,7 +23,7 @@
                  <td>C/O Name</td>
                 <td><input type="text" name="co_name" id="co_name" value="<?php echo $row['co_name']; ?>" /> </td>
                 <td>Gender</td>
-                <td><input type="radio" name="gender" id="MALE" value="MALE" <?php if($row['gender']=="MALE") { echo checked; }?> />Male<input type="radio" name="gender" id="FEMALE" value="FEMALE" <?php if($row['gender']=="FEMALE") { echo checked; }?> />Female<input type="radio" name="gender" id="OTHERS" value="OTHERS" <?php if($row['gender']=="OTHERS") { echo checked; }?>/>Others</td>
+                <td><input type="radio" name="gender" id="MALE" value="MALE" <?php if($row['gender']=="MALE") { echo "checked"; }?> />Male<input type="radio" name="gender" id="FEMALE" value="FEMALE" <?php if($row['gender']=="FEMALE") { echo "checked"; }?> />Female<input type="radio" name="gender" id="OTHERS" value="OTHERS" <?php if($row['gender']=="OTHERS") { echo checked; }?>/>Others</td>
               
             </tr>
             <tr>
