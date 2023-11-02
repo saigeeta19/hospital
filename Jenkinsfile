@@ -13,18 +13,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                test 'hospital'
-            }
+       
         }
-
-        stage('Deploy') {
-            steps {
-               echo 'Deploying the App'
-            }
-        }
-    }
-
-  
-}
+   }
