@@ -11,8 +11,19 @@ pipeline {
             steps {
                build 'hospital'
             }
+          }
+        stage('Test') {
+            steps {
+               test 'hospital'
+            }
+         }
+        stage('Deploy') {
+            steps {
+               deploy 'hospital'
+            }
         }
-
+    }
+}
        
         }
    }
