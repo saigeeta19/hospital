@@ -9,13 +9,13 @@ pipeline {
            }
         stage('Build') {
             steps {
-               echo 'Building the App'
+               build 'hospital'
             }
         }
 
         stage('Test') {
             steps {
-                echo 'Testing the App'
+                test 'hospital'
             }
         }
 
