@@ -4,7 +4,7 @@ pipeline {
     stages {
        stage('cloning the repo'){
            steps {
-               git branch: 'main', credentialsId: 'reigatehospice', url: 'https://github.com/saigeeta19/hospital.git'
+               git branch: 'main', credentialsId: 'git', url: 'https://github.com/saigeeta19/hospital'
              }
            }
         stage('Build') {
