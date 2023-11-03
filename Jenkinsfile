@@ -8,11 +8,13 @@ pipeline {
              }
            }
         stage('Build') {
+            agent any
             steps {
-               sh 'hospital' 
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                checkout scm
+                sh 'make'
+                stash includes: '**/target/*.jar', name: 'hospital' 
             }
-          }
+        }
         stage('Test') {
             steps {
                echo 'hospital'
