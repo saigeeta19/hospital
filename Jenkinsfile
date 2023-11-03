@@ -9,7 +9,7 @@ pipeline {
            }
         stage('Install PHP Dependencies') {
             steps {
-        sh 'curl -sS https://getcomposer.org/installer | php -- --install-dir= --filename=composer'
+            sh 'sudo apt-get install php'
             }
         }
         stage('Build') {
