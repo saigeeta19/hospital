@@ -15,12 +15,12 @@ pipeline {
         }
         stage('Build') {
             steps {
-                index.php
+                echo 'hospital'
             }
         }
         stage('Test') {
             steps {
-               index.php
+               echo 'hospital'
             }
          }
         stage('Deploy') {
