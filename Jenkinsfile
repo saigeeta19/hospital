@@ -9,7 +9,8 @@ pipeline {
            }
         stage('Build') {
             steps {
-               build 'hospital'
+               sh 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
           }
         stage('Test') {
