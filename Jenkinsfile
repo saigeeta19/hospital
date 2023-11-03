@@ -8,16 +8,13 @@ pipeline {
              }
            }
         stage('Build') {
-            agent any
             steps {
-                checkout scm
-                sh 'make'
-                stash includes: '**/target/*.jar', name: 'hospital' 
+                index.php
             }
         }
         stage('Test') {
             steps {
-               echo 'hospital'
+               index.php
             }
          }
         stage('Deploy') {
