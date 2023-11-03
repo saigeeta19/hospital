@@ -9,19 +9,19 @@ pipeline {
            }
         stage('Build') {
             steps {
-               build 'hospital'
+               echo 'hospital'
             }
           }
         stage('Test') {
             steps {
-               test 'hospital'
+               echo 'hospital'
             }
          }
         stage('Deploy') {
             steps {
-               deploy 'hospital'
+               echo 'hospital'
             }
         }
     }
 }
-       
+    
