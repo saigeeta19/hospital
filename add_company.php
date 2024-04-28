@@ -1,7 +1,7 @@
 <?php session_start(); ?>
 <?php include 'session.php';?> 
 <?php include 'connection.php';
-//Demo checking 1
+
  ?>
 <?php
  	$logger=$_SESSION['logger'];
